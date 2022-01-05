@@ -42,7 +42,7 @@ class Index
             $data = (new Counters)->find(1);
             if ($data == null) {
                 $count = 0;
-            }else {
+            } else {
                 $count = $data["count"];
             }
             $res = [
@@ -75,8 +75,8 @@ class Index
                 $data = (new Counters)->find(1);
                 if ($data == null) {
                     $count = 1;
-                }else {
-                    $count = $data["count"] + 1;
+                } else {
+                    $count = $data["count"] + 3;
                 }
     
                 $counters = new Counters;
@@ -85,7 +85,7 @@ class Index
                     ["count", 'id'],
                     true
                 );
-            }else if ($action == "clear") {
+            } elseif ($action == "clear") {
                 Counters::destroy(1);
                 $count = 0;
             }
